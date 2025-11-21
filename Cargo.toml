@@ -1,0 +1,20 @@
+[package]
+name = "json2toon"
+version = "0.1.0"
+edition = "2024"
+authors = ["Michael A Wright"]
+license = "MIT"
+description = "Convert JSON to TOON (Token-Oriented-Object-Notation) format"
+repository = "https://github.com/softwarewrighter/json2toon"
+readme = "README.md"
+keywords = ["json", "toon", "converter", "cli"]
+categories = ["command-line-utilities", "encoding"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+
+[build-dependencies]
+chrono = "0.4"
