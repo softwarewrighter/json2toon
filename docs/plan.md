@@ -147,21 +147,47 @@
 - [ ] unicode.json - special characters
 - [ ] edge_cases.json - empty, null, large numbers
 
-## Phase 8: Polish and Documentation
+## Phase 8: Code Quality and Modularity
 
-### Task 8.1: Code Quality
+### Task 8.1: Fix sw-checklist Failures
+- [ ] Build release binary with `cargo build --release`
+- [ ] Refactor `convert_value` function in converter.rs (currently 51 lines, max 50)
+  - Break into smaller helper functions
+  - Target: <25 lines per function
+- [ ] Refactor `estimate_value_size` function in converter.rs (currently 41 lines)
+  - Break into smaller helper functions
+  - Target: <25 lines per function
+- [ ] Refactor converter.rs module (currently 15 functions, max 7)
+  - Consider splitting into multiple modules
+  - Group related functions logically
+  - Target: ≤4 functions per module
+- [ ] Refactor toon.rs module (currently 16 functions, max 7)
+  - Consider splitting into multiple modules (e.g., writer, formatter, escaping)
+  - Group related functions logically
+  - Target: ≤4 functions per module
+- [ ] Refactor `main` function in main.rs (currently 98 lines, max 50)
+  - Extract logic into separate functions
+  - Move conversion pipeline to dedicated function
+  - Move error handling to helper functions
+  - Target: <25 lines per function
+- [ ] Address crate module count (currently 5 modules, warning at >4)
+  - Evaluate if modules can be consolidated
+  - Or accept warning if modularity is beneficial
+
+### Task 8.2: Code Quality
 - [ ] Run clippy and fix warnings
 - [ ] Format code with rustfmt
 - [ ] Add documentation comments
 - [ ] Review and refactor
+- [ ] Re-run sw-checklist to verify all checks pass
 
-### Task 8.2: User Documentation
+### Task 8.3: User Documentation
 - [ ] Write README.md
 - [ ] Add usage examples
 - [ ] Document TOON format
 - [ ] Add troubleshooting section
 
-### Task 8.3: Final Validation
+### Task 8.4: Final Validation
 - [ ] Test on Linux
 - [ ] Test on macOS
 - [ ] Test on Windows
